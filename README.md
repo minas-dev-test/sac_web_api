@@ -16,9 +16,12 @@ Por padrão o projeto é inicializado na porta 5000 (<http://localhost:5000/api/
 ## Rotas
 
 - `/api/sac`
-  - `GET`: Obtém as entradas de SAC
+  - `GET`: Obtém todos os tickets de SAC
+  - `POST`: Cadastra um novo ticket passando os campos `nomeDoUsuario`, `email`,`telefone`, `mensagem`
+  - `PUT`: Atualiza o status de um ticket passando `id`
 
 ## TODO
 
 - [ ] Auto-inicialização do banco de dadsos (`CREATE TABLE IF NOT EXISTS`)
-- [ ] Documentação das Rotas
+- [x] Documentação das Rotas
+- [ ] Padronização das Rotas

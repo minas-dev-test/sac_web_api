@@ -1,0 +1,22 @@
+version: "3.3"
+
+services:
+  sac-db:
+    image: mysql:5.7
+    volumes:
+      - ./database:/var/lib/mysql
+      - ./db-import.sql:/docker-entrypoint-initdb.d/dump.sql
+    command: --log_error_verbosity=1
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: sac_web_api
+      MYSQL_USER: sac_web_api_ufjf
+      MYSQL_PASSWORD: s@cw3b4p1
+  sac-api:
+    build: .
+    ports: 
+      - "5000:80"
+    depends_on:
+      - sac-db
+    environment: 
+      - ConnectionString=Server=sac-db;Port=3306;Database=sac_web_api;Uid=sac_web_api_ufjf;Pwd=s@cw3b4p1;

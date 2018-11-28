@@ -23,5 +23,6 @@ Por padrão o projeto é inicializado na porta 5000 (<http://localhost:5000/api/
 ## TODO
 
 - [ ] Auto-inicialização do banco de dadsos (`CREATE TABLE IF NOT EXISTS`)
+- [ ] Permitir pesquisa e filtragem (GET retornando tudo...)
 - [x] Documentação das Rotas
 - [ ] Padronização das Rotas
